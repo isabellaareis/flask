@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='estilo.css')}}">-->
+    <title>{{titulo}}</title>
+     <style>
+          nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #BC6684;
+            padding: 10px 20px;
+            width: 100%;
+            height: 70px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px; /* Espaço uniforme entre os links */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 5px 10px; /* Adiciona padding para melhorar a área clicável */
+            border-radius: 5px; /* Bordas arredondadas */
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 215, 0, 0.2); /* Fundo ao passar o mouse */
+            color: #FFD700;
+        }
+
+        /* Define a altura mínima da área de conteúdo */
+        .conteudo {
+            flex: 1;
+            margin-top: 0;
+            z-index: 0;
+            position: relative;
+        }
+    </style>
+    <title>{{titulo}}</title>
+</head>
+<body>
+    <nav>
+        <img src="{{url_for('static', filename='logo.png')}}" alt="Logo" class="logo">
+        <div class="nav-links">
+            <a href="/index">Página Inicial</a>
+            <a href="/cadastro">Cadastro</a>
+            <a href="/atualizar">Atualizar</a>
+            <a href="/listar">Consultar</a>
+            <a href="/individual">Consultar Individual</a>
+            <a href="/excluir">Excluir</a>
+        </div>
+    </nav>
+
+    <div class="conteudo">
+        {% block conteudo %}
+        {% endblock %}
+    </div>
+</body>
+</html>

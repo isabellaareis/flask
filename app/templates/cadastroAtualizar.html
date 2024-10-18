@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<form action="/cadastroAtualizar" method="POST">
+    <label>CPF: </label>
+    <input type="text" name="cpfAtualizar" id="cpfAtualizar"/><br><br>
+
+    <label>Nome: </label>
+    <input type="text" name="nome" id="nome"/><br><br>
+
+     <label>Telefone: </label>
+    <input type="text" name="telefone" id="telefone"/><br><br>
+
+     <label>Endereço: </label>
+    <input type="text" name="endereco" id="endereco"/><br><br>
+
+    <!-- Button trigger modal -->
+    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Atualizar
+    </button>
+</form>
+
+     <a href="atualizar">Atualizar</a>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">ATUALIZADO COM SUCESSO</h1>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

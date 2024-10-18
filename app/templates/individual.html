@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<form action="/individual" method="POST">
+    <label>CPF: </label>
+    <input type="text" name="cpfConsulta" id="cpf1"/><br><br>
+
+    <button type="submit">Consultar Individual</button><br><br>
+</form>
+
+{% if idCadastro %}
+    <p>ID do Cadastro: {{ idCadastro }}</p>
+{% endif %}
+{% endblock %}
