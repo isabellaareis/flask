@@ -1,39 +1,58 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-<form action="/cadastroAtualizar" method="POST">
-    <label>CPF: </label>
-    <input type="text" name="cpfAtualizar" id="cpfAtualizar"/><br><br>
 
-    <label>Nome: </label>
-    <input type="text" name="nome" id="nome"/><br><br>
-
-     <label>Telefone: </label>
-    <input type="text" name="telefone" id="telefone"/><br><br>
-
-     <label>Endereço: </label>
-    <input type="text" name="endereco" id="endereco"/><br><br>
-
-    <!-- Button trigger modal -->
-    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      Atualizar
-    </button>
-</form>
-
-     <a href="atualizar">Atualizar</a>
-
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">ATUALIZADO COM SUCESSO</h1>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ok</button>
-          </div>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Atualizar dados do Usuário</h2>
+    <form action="/cadastroAtualizar" method="POST" class="bg-pink p-4 rounded shadow" style="max-width: 400px; margin: auto;">
+        <div class="mb-3">
+            <label for="cpfAtualizar" class="form-label">CPF:</label>
+            <input type="text" name="cpfAtualizar" id="cpfAtualizar" class="form-control" required />
         </div>
-      </div>
-    </div>
 
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" name="nome" id="nome" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone:</label>
+            <input type="text" name="telefone" id="telefone" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="endereco" class="form-label">Endereço:</label>
+            <input type="text" name="endereco" id="endereco" class="form-control" required />
+        </div>
+
+
+        <button type="submit" class="btn btn-outline-danger w-100"" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Atualizar
+        </button>
+    </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">ATUALIZADO COM SUCESSO</h1>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger w-100" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-pink {
+        background-color: #ffcccb;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+    }
+</style>
 
 {% endblock %}
